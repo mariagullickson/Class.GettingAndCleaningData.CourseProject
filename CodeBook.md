@@ -43,8 +43,8 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 
 The complete list of variables of each feature vector are as follows:
 
-1. TestSubject
-2. Activity
+1. Activity
+2. TestSubject
 3. tBodyAcc.mean...X
 4. tBodyAcc.mean...Y
 5. tBodyAcc.mean...Z
