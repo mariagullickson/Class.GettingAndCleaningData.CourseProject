@@ -51,4 +51,4 @@ meltedData <- melt(dataSet, id=c("Activity", "TestSubject"))
 meanData <- dcast(meltedData, Activity+TestSubject ~ variable, mean)
 
 # write meanData out to a file
-write.table(meltedData, "TidyMeanData.txt", row.names=FALSE)
+write.table(meanData, "TidyMeanData.txt", row.names=FALSE)
