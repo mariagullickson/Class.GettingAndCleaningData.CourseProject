@@ -19,6 +19,9 @@ At this point, it extracts only the interesting columns.  Of course it keeps
 Activity and TestSubject.  It also keeps anything with ".mean", ".meanFreq"
 or ".std." in the name - the variables that are means or standard deviations.
 
+Once it's down to only the columns we care about, it goes in and does some
+more cleanup on the names of these columns to make them more readable.
+
 Finally, it reshapes the data to include average values of each of these means
 and standard deviations for each activity and subject.  This produces a tidy
 data set with columns describing the activity and subject and each measurement
