@@ -44,6 +44,24 @@ levels(dataSet$Activity) <- activityLabels$V2
 columnsToKeep <- grep("\\.mean\\.|\\.meanFreq\\.|\\.std\\.|^Activity$|^TestSubject$", names(dataSet))
 dataSet <- dataSet[,columnsToKeep]
 
+
+# clean up the variable names some more to be more human readable.
+# this includes removing . characters, fixing duplicated words, and
+# using full words instead of abbreviations.  this will end up with
+# variable names that are fairly long, but are designed to provide all
+# information needed to explain what the variables mean.  CamelCase is
+# used for readability of long, multi-word names.
+names(dataSet) <- gsub("Acc", "Acceleration", names(dataSet))
+names(dataSet) <- gsub("Gyro", "Gyroscope", names(dataSet))
+names(dataSet) <- gsub("Mag", "Magnitude", names(dataSet))
+names(dataSet) <- gsub("mean", "Mean", names(dataSet))
+names(dataSet) <- gsub("[fF]req", "Frequency", names(dataSet))
+names(dataSet) <- gsub("std", "StandardDeviation", names(dataSet))
+names(dataSet) <- gsub("BodyBody", "Body", names(dataSet))
+names(dataSet) <- gsub("\\.", "", names(dataSet))
+names(dataSet) <- gsub("^f", "Frequency", names(dataSet))
+names(dataSet) <- gsub("^t", "Time", names(dataSet))
+
 # create a second, independent, tidy data set with the average of each
 # variable for each activity and each subject
 library(reshape2)
